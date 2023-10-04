@@ -10,7 +10,8 @@ public class Mathematics {
 
 
 	public static void main(String[] args) throws Exception {
-		quest2753();
+//		quest2753();
+//		quest11720();
 	}
 
 //	1000.A+B
@@ -40,4 +41,17 @@ public class Mathematics {
 		System.out.println(isLeapyear);
 	}
 	
+	public static void quest11720() throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int sum = 0;
+		
+		int length = Integer.parseInt(br.readLine());
+		String[] numArr = br.readLine().split("");
+		
+		for(int i = 0; i < length; i++) {
+			sum += Integer.parseInt(numArr[i]);
+		}
+		
+		System.out.println(sum);
+	}
 }
