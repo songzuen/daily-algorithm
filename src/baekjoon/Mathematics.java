@@ -11,7 +11,7 @@ public class Mathematics {
 
 	public static void main(String[] args) throws Exception {
 //		quest2753();
-//		quest11720();
+		quest2884();
 	}
 
 //	1000.A+B
@@ -41,6 +41,7 @@ public class Mathematics {
 		System.out.println(isLeapyear);
 	}
 	
+	// 11720.
 	public static void quest11720() throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int sum = 0;
@@ -53,5 +54,26 @@ public class Mathematics {
 		}
 		
 		System.out.println(sum);
+	}
+	
+	// 2884. 알람 45분 빨리 맞추기
+	public static void quest2884() throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		String[] hmm = br.readLine().split(" ");
+		
+		int h = Integer.parseInt(hmm[0]);		// 시
+		int m = Integer.parseInt(hmm[1]);		// 분
+
+		if(m < 45) {
+			h--;
+			m = 60 - (45 - m);
+			if( h < 0) {
+				h = 23;
+			}
+		} else {
+			m = m - 45;
+		}
+		System.out.println(h+" "+m);
 	}
 }
