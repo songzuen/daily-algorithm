@@ -1,15 +1,12 @@
-package inflearn;
+package inflearn.section1;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Inf_1 {
-	// 1-1 문자찾기
+public class Inf_1_1 {
+	// 문자찾기
 	public static void main(String[] args) throws Exception {
-//		quest1_1();
-	}
-	
-	public static void quest1_1() throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		String str = br.readLine().toUpperCase();
