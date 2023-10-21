@@ -1,11 +1,10 @@
 package inflearn.section1;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Inf_1_5 {
-	// 문장 속 단어
+	// 특정 문자 뒤집기
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -28,29 +27,55 @@ public class Inf_1_5 {
 //		System.out.println(result)
 		
 //		2)
-		char[] cArr = str.toCharArray();
-		int lt = 0;
-		int rt = str.length();
-		while(lt > rt) {
-			if((cArr[lt] >= 65 && cArr[lt] <= 90) || (cArr[lt] >= 97 && cArr[lt] <= 122)) {
-				
-			} else {
+//		char[] cArr = str.toCharArray();
+//		int lt = 0;
+//		int rt = str.length() - 1;
+//		while(lt < rt) {
+//			for(int i = lt; i < str.length(); i++) {
+//				if((cArr[lt] >= 65 && cArr[lt] <= 90) || (cArr[lt] >= 97 && cArr[lt] <= 122)) {
+//					break;
+//				} else {
+//					lt++;
+//				}
+//			}
+//			
+//			for(int j = rt; j >= 0; j--) {
+//				if((cArr[rt] >= 65 && cArr[rt] <= 90) || (cArr[rt] >= 97 && cArr[rt] <= 122)) {
+//					break;
+//				} else {
+//					rt--;
+//				}
+//			}
+//			
+//			char tmp = cArr[lt];
+//			cArr[lt] = cArr[rt];
+//			cArr[rt] = tmp;
+//			lt++;
+//			rt--;
+//		}
+//		String result = String.valueOf(cArr);
+//		System.out.println(result);
+		
+//		3)
+		char[] s = str.toCharArray();
+		int lt = 0, rt = str.length() - 1;
+		
+		while(lt < rt) {
+			if(!Character.isAlphabetic(s[lt])) {				// 알파벳 여부 확인
 				lt++;
-			}
-			
-			if((cArr[rt] >= 65 && cArr[rt] <= 90) || (cArr[rt] >= 97 && cArr[rt] <= 122)) {
-				
+			} else if (!Character.isAlphabetic(s[rt])) {
+				rt--;
 			} else {
+				char tmp = s[lt];
+				s[lt] = s[rt];
+				s[rt] = tmp;
+				lt++;
 				rt--;
 			}
-			
-			char tmp = cArr[lt];
-			cArr[lt] = cArr[rt];
-			cArr[rt] = tmp;
-			lt++;
-			rt--;
 		}
-		String result = String.valueOf(cArr);
+		
+		String result = String.valueOf(s);
 		System.out.println(result);
+		
 	}
 }
