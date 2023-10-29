@@ -1,4 +1,4 @@
-package inflearn.section1;
+package inflearn.string;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
